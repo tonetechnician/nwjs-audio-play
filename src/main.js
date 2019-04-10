@@ -13,7 +13,7 @@ filenameOutput.addEventListener("change",() => {
     fileLoaded = 0;
     // Load the file 
     // For some reason, audio-loader doesn't like full paths. Need to reference the files that are in the same or child directories.
-    window.audioPlay.load(filenameOutput.files[0].name)
+    window.audioPlay.load("audio-files/"+filenameOutput.files[0].name)
         .then((buffer) => {
             sampleBuffer = buffer;
             console.log("file loaded into buffer");
