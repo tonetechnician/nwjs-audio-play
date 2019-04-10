@@ -1,17 +1,17 @@
 # Audio-play with NWJS
 
-## Requirements
+# Requirements
 - [browserify](http://browserify.org/)
 - [NWJS](https://www.npmjs.com/package/nw)
 - [audio-play](https://www.npmjs.com/package/audio-play)
 - [audio-loader](https://github.com/audiojs/audio-loader)
 
-## Installation
+# Installation
 
 1. First install browserify globally: `npm install -g browserify`
 2. Then install required dependencies for the local project: `npm install`
 
-## How to wrap audio-play into a browser bundle for use with nwjs
+### How to wrap audio-play into a browser bundle for use with nwjs
 
 Take a look in the _audioPlay.js_ file. This file holds the main modules that are required to play a selected audio file. Here we see:
 
@@ -39,15 +39,15 @@ So now we **browserify** our _audioPlay.js_ file with the command `browserify au
 
 Once the modules have been browserified, we are able to reference them in other scripts that are loaded. Remember how we attached them to the window object? We can now reference them simply as shown in the script tags in _simplePlayer.html_
 
-## Working application with button events
+### Working application with button events
 
 To see a more event intensive example, refer to _main.js_ that is called in _index.html_. To switch between either, simple change the package.json _main_ object to reference _index.html_ or _simplePlayer.html_.
 
 
-## Multichannel File Support
+### Multichannel File Support
 
-audio-play is able to load multichannel .wav files, not .mp3 files (but that is a limitation on .mp3 I believe). I think decoder options are required to read multichannel .opus files and such. Check the directory for different multichannel files.
+audio-play is able to load multichannel .wav files, not .mp3 files (but that is a limitation on .mp3 I believe). I think decoder options are required to read compressed multichannel files like .opus files and such. Check the directory for different multichannel files.
 
-In order to play multichannel .wav files, we'll need to look at the audio context and change that so it is the limit of the audio device. This can be future work. Or possibly we can figure a better solution that uses the actual Web Audio API which is included in nwjs I believe.
+In order to play multichannel .wav files, we'll need to look at the audio context. This may change dynamically according to the audio device attached to the computer. I have not been able to test as of yet because I only have a stereo audio device on my laptop currently.
 
 
