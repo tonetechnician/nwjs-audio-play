@@ -31,11 +31,13 @@ The only interesting thing to note here is that we attach the important function
 
 **NOW:**
 
-We first need to browserify our _audioPlay.js_. This means that all the node modules required by audio-play and audio-loader into a single .js file. This ensures that when it is loaded by the .html script, all the required modules are available to it. 
+We need to browserify our _audioPlay.js_ so that all the other node modules it depends on are wrapped into a single .js file. This ensures that when it is loaded by the .html script, all the required modules are available to the script. 
 
 _note: browserify is typically used to wrap node modules for the web browser. Since nwjs is built with chromium, we consider it to have a browser context as well as a node context. Important to note here is that browserify does not work on all node modules. For instance 'fs' and other modules will not work within the browser because of permissions._
 
-So now we **browserify** our _audioPlay.js_ file with the command `browserify audioPlay.js -o bundle.js` 
+So now we **browserify** our _audioPlay.js_ file with the command 
+
+`browserify audioPlay.js -o bundle.js` 
 
 Once the modules have been browserified, we are able to reference them in other scripts that are loaded. Remember how we attached them to the window object? We can now reference them simply as shown in the script tags in _simplePlayer.html_
 
