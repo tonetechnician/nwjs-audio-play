@@ -11,6 +11,12 @@
 1. First install browserify globally: `npm install -g browserify`
 2. Then install required dependencies for the local project: `npm install`
 
+## Run
+
+If nwjs was installed with `npm install`, simply run `npm start`.
+
+otherwise, use `path/to/nw .` in the project directory.
+
 ### How to wrap audio-play into a browser bundle for use with nwjs
 
 Take a look in the _audioPlay.js_ file. This file holds the main modules that are required to play a selected audio file. Here we see:
