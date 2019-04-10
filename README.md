@@ -1,12 +1,12 @@
 # Audio-play with NWJS
 
-# Requirements
+## Requirements
 - [browserify](http://browserify.org/)
 - [NWJS](https://www.npmjs.com/package/nw)
 - [audio-play](https://www.npmjs.com/package/audio-play)
 - [audio-loader](https://github.com/audiojs/audio-loader)
 
-# Installation
+## Installation
 
 1. First install browserify globally: `npm install -g browserify`
 2. Then install required dependencies for the local project: `npm install`
